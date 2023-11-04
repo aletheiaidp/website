@@ -128,3 +128,11 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Go vendor
+_vendor/
+
+# Hugo Dependencies
+resources/
+public/
+.hugo_build.lock
