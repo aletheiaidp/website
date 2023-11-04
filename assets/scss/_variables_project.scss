@@ -1,0 +1,10 @@
+$google_font_name: "Lato";
+$google_font_family: "Lato:300,300i,400,400i,700,700i";
+
+$aletheia-purple: #4b2880;
+
+$aletheia-purple-light: lighten($aletheia-purple, 10%);
+$aletheia-purple-dark: darken($aletheia-purple, 20%);
+
+$primary: $aletheia-purple-dark;
+$secondary: $aletheia-purple-light;
