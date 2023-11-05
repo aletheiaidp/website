@@ -6,6 +6,7 @@ contentDir = "content/en"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
 
+
 [module]
   [module.hugoVersion]
     extended = true
@@ -17,5 +18,24 @@ defaultContentLanguageInSubdir = false
     path = "github.com/google/docsy/dependencies"
     disable = false
 
+
+[params]
+copyright = "The Aletheia Authors |"
+
 [params.ui]
 sidebar_menu_compact = true
+footer_about_disable = true
+sidebar_menu_foldable = true
+
+[params.links]
+[[params.links.user]]
+	name = "User mailing list"
+	url = "https://mudrex.com"
+	icon = "fa fa-envelope"
+	desc = "Discussion and help from your the original organization"
+
+[[params.links.developer]]
+	name = "GitHub"
+	url = "https://github.com/aletheiaidp/aletheia"
+	icon = "fab fa-github"
+	desc = "Development takes place here!"
