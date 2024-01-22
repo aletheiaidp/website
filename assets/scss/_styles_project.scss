@@ -123,17 +123,30 @@ footer {
     .feature:nth-child(even) {
         flex-direction: row !important;
     }
+
+    .feature:nth-child(even) .image-wrapper{
+        margin-right: 50px;
+    }
+
+    .feature:nth-child(odd) .image-wrapper{
+        margin-left: 50px;
+    }
       
     .image-wrapper {
-        max-width: 75%;
+        max-width: 100%;
 
         img{
             width: 100%;
+            width: 200px;
+            height: 200px;
         }
     }
 
     .content{
         font-weight: 200;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
     }
 }
 
