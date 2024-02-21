@@ -136,3 +136,6 @@ _vendor/
 resources/
 public/
 .hugo_build.lock
+
+# MacOS
+.DS_Store
