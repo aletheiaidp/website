@@ -1,0 +1,66 @@
+---
+title: Aletheia
+---
+
+{{< blocks/cover height="min" >}}
+<div class="d-flex justify-content-start">
+	<img src="/images/logo/light.svg" class="white-logo" />
+	<div class="d-flex flex-column justify-content-center align-items-start align-self-center">
+		<h1>Aletheia</h1>
+		<h4>An opinionated Cloud Native Directory Service</h4>
+	</div>
+</div>
+
+<div class="mt-5 mx-auto">
+	<a class="btn btn-lg btn-secondary mr-3 mb-4" href="/docs">Learn more</a>
+	<a class="btn btn-lg btn-primary mr-3 mb-4" href="/docs/setup">Quickstart <i class="fas fa-arrow-alt-circle-right ml-2"></i></a>
+</div>
+{{< /blocks/cover >}}
+
+
+{{< blocks/section id="features" color="white" >}}
+
+{{% blocks/feature image="/images/features/aletheia.svg" %}}
+#### [Aletheia]({{< relref "/docs/" >}}), is an open-source system for running and managing a cloud native, production-grade Identity Datastore and Directory Service.
+
+It provides an suite of tools for running and administrating an Identity Datastore. Built and Tested at [Mudrex](https://mudrex.com), Aletheia builds upon the needs of an cloud native datastore combined with the best practices from the LDAP community.
+{{% /blocks/feature %}}
+
+{{% blocks/feature image="/images/features/truth.svg" %}}
+#### Single Source of Truth
+
+Acting as a single source of truth for your organization, Aletheia will store employee accounts, roles, groups and all the entities necessary for effective access control. Using LDAP Protocol, you can connect Aletheia to almost all enterprise or OSS tools avaiable out there.
+
+
+{{% /blocks/feature %}}
+
+{{% blocks/feature image="/images/features/high-availability.svg" %}}
+#### Highly Available & Scalable
+
+Aletheia runs its core servers in active standby mode. A standby node is present for automatic failover in case the active node goes down. Aletheia makes a distinction between read and write nodes allowing you to horizontally scale up your read workload.
+{{% /blocks/feature %}}
+
+{{% blocks/feature image="/images/features/optimal.svg" %}}
+#### Optimal Configuration
+
+Aletheia was built with optimal configuration for running production workloads. The default configuration should satisfy 99.99% use cases of an identity datastore.
+{{% /blocks/feature %}}
+
+
+{{% blocks/feature image="/images/features/secure.svg" %}}
+#### Secure
+
+Features such as password policy, system account separation and granluar access to the Directory Information Tree is already preconfigured and ready to use.
+
+
+{{% /blocks/feature %}}
+
+{{% blocks/feature image="/images/features/ease.svg" %}}
+#### User Friendly
+
+Aletheia's ecosystem contains a Password Manager UI to change passwords and a notification system notifying users to update their passwords.
+
+
+{{% /blocks/feature %}}
+
+{{< /blocks/section >}}
