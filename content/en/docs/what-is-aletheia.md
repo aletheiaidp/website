@@ -1,14 +1,12 @@
 ---
-title: Overview
-linkTitle: Overview
-weight: 1
+title: What is Aletheia?
+linkTitle: What is Aletheia?
+weight: -1
 description: >
   An overview of Aletheia and its ecosystem
 ---
 
-## What is Aletheia?
-
-This page is an overview of Aletheia. Aletheia is a set of tools for deploying and managing a directory service in a cloud native fashion. 
+Aletheia is a set of tools for deploying and managing a directory service in a cloud native fashion. 
 
 The name Aletheia originates from Greek mythology where Aletheia was the personified spirit of truth and sincerity. Aletheia is meant to serve as the single source of truth for identities within a system. Battle tested at [Mudrex](https://mudrex.com/), Aletheia has been providing identities and groups since 2022.
 
