@@ -6,16 +6,60 @@ description: >
   An overview of Aletheia's architecture
 ---
 
-The document outlines the high level architecture of a complete Aletheia cluster.
+The document outlines the high level architecture of a complete Aletheia cluster. Aletheia is a set of components with distinct and decoupled purposes. The components can be categorized as follows: 
 
-{{< figure src="/images/docs/architecture/overall.svg" alt="Overall Architecture" class="diagram-large d-flex justify-content-center" >}}
+- Server
+- API
+- Worker
+
+```
+                     ┌−−−−−−−−−−−−−−−┐
+                     ╎      api      ╎
+                     ╎               ╎
+                     ╎ ┌───────────┐ ╎
+                     ╎ │   rest    │ ╎
+                     ╎ └───────────┘ ╎
+                     ╎               ╎
+                     └−−−−−−−−−−−−−−−┘
+                         │
+                         │
+                         ▼
+┌−−−−−−−−−−−−−−┐     ┌−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−┐
+╎    worker    ╎     ╎                      server                     ╎
+╎              ╎     ╎                                                 ╎
+╎ ┌──────────┐ ╎     ╎ ┌───────────┐       ┌───────┐     ┌───────────┐ ╎
+╎ │ listener │ ╎ ──▶ ╎ │ consumers │ ────▶ │ proxy │ ──▶ │ providers │ ╎
+╎ └──────────┘ ╎     ╎ └───────────┘       └───────┘     └───────────┘ ╎
+╎              ╎     ╎                                                 ╎
+└−−−−−−−−−−−−−−┘     └−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−┘
+                         ▲
+                         │
+                         │
+                     ┌−−−−−−−−−−−−−−−┐
+                     ╎    worker     ╎
+                     ╎               ╎
+                     ╎ ┌───────────┐ ╎
+                     ╎ │ notifier  │ ╎
+                     ╎ └───────────┘ ╎
+                     ╎               ╎
+                     └−−−−−−−−−−−−−−−┘
+```
+
+### Server
+A Server is the heart of Aletheia, running an LDAP database.
+
+Aletheia provides OpenLDAP as the database.
+
+### API
+The API provides an interface to communicate with the backing datastore apart from the LDAP protocol.
+
+Aletheia supports a REST API.
 
 
-## Request Flow
-1. A client/application connects to a load balancer.
-2. The load balancer forwards this request to a bunch of consumer nodes.
-3. The consumers will return read responses and will forward write requests to aletheia's proxy component.
-4. The proxy forwards the write request to the active provider node. A standby node is present for automatic failover in case the active provider goes down.
+### Workers
+Workers perform asynchoronous operations on the server. Listening on change events or periodically polling to check whether the user's password is going to expire or not are all part of the worker's responsibility.
+
+Aletheia has 2 workers - listener and notifier.
 
 ## What's Next?
 

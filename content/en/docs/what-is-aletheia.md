@@ -6,28 +6,30 @@ description: >
   An overview of Aletheia and its ecosystem
 ---
 
-Aletheia is a set of tools for deploying and managing a directory service in a cloud native fashion. 
+{{% pageinfo color="primary" %}}
+The name Aletheia originates from Greek mythology where Aletheia was the personified spirit of **truth**.
+{{% /pageinfo %}}
 
-The name Aletheia originates from Greek mythology where Aletheia was the personified spirit of truth and sincerity. Aletheia is meant to serve as the single source of truth for identities within a system. Battle tested at [Mudrex](https://mudrex.com/), Aletheia has been providing identities and groups since 2022.
+## What is Aletheia?
+Aletheia provides a comprehensive solution that utilizes OpenLDAP for cloud-native deployment and management of directory services. While Microsoft's Active Directory has dominated the directory service landscape, there are also open-source projects like OpenLDAP and 389 Directory Server. However, these lack a cloud-native approach for deployment and management. 
 
-Concretely aletheia aims to **simplify the directory service ecosystem.**
+The main aim of Aletheia is tobring directory services onto the cloud and to establish a single source of truth for all identities such as user accounts, access control groups, and password policies.
 
-## Why Aletheia?
+## Features
+Aletheia, built on top of OpenLDAP, serves to solve these cross-cutting concerns. Aletheia provides a comprehensive set of features and benefits: 
 
-The directory service landscape has been dominated by Microsoft's Active Directory. Open source projects such as OpenLDAP and 389 Directory Server are also present, but there is no cloud-native way to deploy and manage them. One can find a host of tutorials online focusing on installing OpenLDAP on a bare server and running it there. 
+- Cloud Native: All components of Aletheia have been packaged as containers. This means that you can run Aletheia on a container orchestration engine of your choice.
+- High Availability:  Aletehia ensures high availability by running OpenLDAP servers in an active-passive mode for disaster recovery and continuous directory service availability
+- Horizontal Scaling: Leveraging OpenLDAP's replication feature, Aletheia allows horizontal scaling with multiple consumers handling read load efficiently
+- Notification & Change Management: End users will be notified about password expiry dates through notifications provided by Alteheis. An intuitive UI enables them to change their passwords seamlessly.
+- Extensible API: Aletheia provides a REST-based API for interacting with the directory information tree.
 
-Aletheia, built on top of OpenLDAP, serves to solve these cross cutting concerns. Aletheia provides you with:
-
-* **Cloud Native**
-  All components of Aletheia have been packaged as containers. This means that you can run Aletheia on a container orchestration engine (Kubernetes, Amazon ECS) of your choice.
-* **High Availability**
-  Aletheia will run openldap servers in high availability in active-passive mode. This will ensure disastor recovery and make the directory service avaiable all the time.
-* **Horizontal Scaling**
-  Leveraging OpenLDAP's replication feature, Aletheia will provide a host of consumers to handle read load which can be horizonatally scaled.
-* **Notification & Change Management**
-  End users will be notified by Aletheia on password expiry dates and a nice UI will allow them to change their passwords seamlessly.
-* **Simplified Administration**
-  Admins will now be able to perform admin operations via a suite of command line tooling made avaiable by Aletheia.
+## Components
+The Aletheia system offers a range of components, each serving a specific and distinct purpose:
+- [server](/docs/components/server/) runs the database server.
+- [api](/docs/components/api/) provides REST endpoints for managing or interacting with the OpenLDAP database.
+- [worker](/docs/components/worker/) is responsible for monitoring the OpenLDAP database and sending notifications/alerts.
+- [proxy](/docs/components/proxy+), manages a HAproxy server to enable automatic failover between active and standby server nodes.
 
 ## What's Next?
 
